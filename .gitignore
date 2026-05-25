@@ -1,0 +1,55 @@
+ covid_analysis/Scripts/ 
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[codz]
+*$py.class
+
+# C extensions
+*.so
+
+# --- Virtual Environments ---
+.venv/
+venv/
+env/
+ENV/
+pyvenv.cfg
+.python-version
+covid_analysis/Scripts/
+covid_analysis/Lib/
+covid_analysis/Include/
+
+
+# --- Byte-compiled / optimized / DLL files ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- C extensions ---
+*.so
+
+# --- Distribution / packaging ---
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --- IDEs and text editors ---
+.vscode/
+.idea/
+
+# --- Local environment variables ---
+.env
