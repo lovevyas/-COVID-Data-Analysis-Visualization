@@ -13,9 +13,9 @@ env/
 ENV/
 pyvenv.cfg
 .python-version
-Scripts/
-Lib/
-Include/
+covid_analysis/Scripts/
+covid_analysis/Lib/
+covid_analysis/Include/
 
 
 # --- Byte-compiled / optimized / DLL files ---
