@@ -55,3 +55,4 @@ MANIFEST
 
 # --- Local environment variables ---
 .env
+covid_analysis/share/man/man1/ttx.1
