@@ -18,11 +18,8 @@ class CovidArrayLoader:
                                     dtype="U50,f8,f8,f8,f8",
                                     filling_values=np.nan)
         self.countries = raw_data['f0'].astype(str)
-        numeric_fields = raw_data[['f1', 'f2', 'f3', 'f4']]
-        flattened_floats = numeric_fields.view('f8')
-        total_rows = len(raw_data) 
-        self.matrix = flattened_floats.reshape(total_rows, 4)
-        self.confirmed = self.matrix[:, 0]
+        self.matrix = np.column_stack((raw_data['f1'], raw_data['f2'], raw_data['f3'], raw_data['f4']))
+        self.confirmed = self.matrix[:, 0]        
         
     def __repr__(self):
         return f"CovidArrayLoader(shape={self.matrix.shape})"
