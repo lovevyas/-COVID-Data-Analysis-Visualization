@@ -25,17 +25,17 @@ class CovidArrayLoader:
             raise FileNotFoundError(
                 f"CSV not found at {DATA_PATH}\n"
             ) 
-        self.matrix = np.genfromtxt(DATA_PATH, 
+        raw_data = np.genfromtxt(DATA_PATH, 
                                     delimiter=",", 
                                     skip_header=1, 
-                                    usecols=(1,2,3,4), 
-                                    dtype=np.float64, 
+                                    usecols=(0,1,2,3,4), 
+                                    dtype="U50,f8,f8,f8,f8",
                                     filling_values=np.nan)
-        self.countries = np.genfromtxt(DATA_PATH,
-                                       delimiter=",",
-                                       skip_header=1,
-                                       usecols=(0,), # code repetition 
-                                       dtype = "str")
+        self.countries = raw_data['f0'].astype(str)
+        numeric_fields = raw_data[['f1', 'f2', 'f3', 'f4']]
+        flattened_floats = numeric_fields.view('f8')
+        total_rows = len(raw_data) 
+        self.matrix = flattened_floats.reshape(total_rows, 4)
         self.confirmed = self.matrix[:, 0]
         
     def __repr__(self):

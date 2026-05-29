@@ -1,5 +1,6 @@
  covid_analysis/Scripts/ 
- covid_analysis/share/man/man1
+ covid_analysis/share/
+ covid_analysis/share/man/man1/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
