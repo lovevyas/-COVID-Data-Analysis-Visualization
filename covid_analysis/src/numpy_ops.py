@@ -1,22 +1,8 @@
-"""
-numpy_ops.py — Task 1: NumPy Operations
-Pure NumPy only. Pandas enters in Task 2.
- 
-Classes
--------
-CovidArrayLoader
-NumPyAnalyzer
-"""
-
 import numpy as np
 from pathlib import Path
 
 BASE_DIR  = Path(__file__).resolve().parent.parent
 DATA_PATH = BASE_DIR / "data" / "country_wise_latest_coviddata.csv"
-
-# Debug helper — uncomment if getting FileNotFoundError
-# print(f"Looking for CSV at: {DATA_PATH}")
-# print(f"File exists: {DATA_PATH.exists()}")
 
 class CovidArrayLoader:
     
@@ -172,10 +158,7 @@ class NumpyAnalyzer:
         print("\nCustom split at index: ")
         top, bottom = np.array_split(m, [170])
         print_info("Top", top)
-        print_info("Bottom", bottom)
-        
-        
-    # ── Run all ───────────────────────────────────────────────────────────────
+        print_info("Bottom", bottom)                
  
     def run(self):
         
