@@ -56,7 +56,8 @@ class NumpyAnalyzer:
         stats = [("Sum", np.nansum), ("Mean", np.nanmean),
                  ("Median", np.nanmedian), ("Max", np.nanmax), 
                  ("Min", np.nanmin), ("Std", np.nanstd)]
-        
+        for name, func in stats:
+            print(name, func(c))
         
         p25, p75 = np.nanpercentile(c, [25, 75])
         print("IQR:", p75 - p25)
