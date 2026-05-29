@@ -144,7 +144,7 @@ class NumpyAnalyzer:
             
         print("\nVertical split (vsplit):")
         try:
-            vparts = np.vsplit(m,9)
+            vparts = np.vsplit(m,2)
             for part in vparts:
                 print_info(f"VPart", part)                    
         except:
