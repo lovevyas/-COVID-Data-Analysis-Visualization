@@ -4,8 +4,8 @@ from pathlib import Path
 BASE_DIR  = Path(__file__).resolve().parent.parent
 DATA_PATH = BASE_DIR / "data" / "country_wise_latest_coviddata.csv"
 
-class CovidArrayLoader:
-    
+
+class CovidArrayLoader:    
     def __init__(self):
         if not DATA_PATH.exists():
             raise FileNotFoundError(
@@ -78,9 +78,17 @@ class NumpyAnalyzer:
         m = self.matrix
         col_min, col_max = np.nanmin(m, axis=0), np.nanmax(m, axis=0)
         self.normalised = (m - col_min) / (col_max - col_min)
-        print(f"matrix {m.shape}  ÷  col_max {col_max.shape}  → broadcasts automatically")
-        print(f"Normalised range : {self.normalised.min():.2f} → {self.normalised.max():.2f}") # smip
-        print(f"First row (normalised):\n{self.normalised[0].round(4)}")
+        norm_min = round(self.normalised.min(), 2)
+        norm_max = round(self.normalised.max(), 2)
+        
+        output_data = {
+            "Original shape": m.shape,
+            "Column max shape": col_max.shape,
+            "Normalised range": f"{norm_min} to {norm_max}",
+            "First normalised row": f"\n{self.normalised.round(4)}"
+        }
+        for label, value in output_data.items():
+            print(f"{label}: {value}")
     
     def show_slicing(self):
         print("6. Slicing & Indexing")    
