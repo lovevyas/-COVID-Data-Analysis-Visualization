@@ -47,7 +47,7 @@ class EDAAnalyzer:
         )
 
     def EDA_Analysis(self):
-        print("\nEDA ")
+        print("\nEDA Analysis: ")
         
         self.status_summary()
 
