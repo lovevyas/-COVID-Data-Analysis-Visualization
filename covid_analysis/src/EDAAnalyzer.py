@@ -52,7 +52,7 @@ class EDAAnalyzer:
         self.status_summary()
 
         print("\nTop 10 Countries:")
-        print(self.top_10_countries()[["Country/Region", "Confirmed"]])
+        print(self.top_10_countries()[["Country/Region", "Confirmed"]].reset_index(drop=True))
 
         print("\nTop 5 Active Cases:")
         print(self.highest_active()[["Country/Region", "Active"]])

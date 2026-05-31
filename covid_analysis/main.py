@@ -20,8 +20,6 @@ def main():
     EDAanalyzer.EDA_Analysis()
     
 
-    
- 
  
 if __name__ == "__main__":
     main()
